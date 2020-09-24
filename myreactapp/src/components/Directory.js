@@ -36,7 +36,7 @@ function Directory(props) {
 
         <div className="container">
  
-<table class="table">
+<table className="table">
   <thead>
     <tr>
       <th scope="col">ID</th>
@@ -57,6 +57,7 @@ function Directory(props) {
                     email={employee.email}
                     dob={employee.dob.date}
                     id={i + 1}
+                    key={employee.id.value}
                 />
             ))}
   </tbody>

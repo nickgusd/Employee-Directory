@@ -38,10 +38,6 @@ componentDidMount() {
   };
 
 
-//   const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
-
-//   const result = words.filter(word => word.length > 6);
-
 
 
   handleFormSubmit = event => {
@@ -54,12 +50,7 @@ componentDidMount() {
 
     this.setState({ results: filterSearch.length === 0 ? "No results found" : filterSearch })
 
-    // var n = str.includes("world")
-    // .then(res => {
-    //     this.setState({search: res.data.results.name})
-    // })
-    // console.log(this.state.search)
-
+    
 
   };
 
