@@ -30,19 +30,35 @@ componentDidMount() {
     // const {name, value} = event.target
     // const name = event.target.name;
     // const value = event.target.value;
+
     this.setState({
     //   [name]: value
     search: event.target.value
     });
   };
 
+
+//   const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+//   const result = words.filter(word => word.length > 6);
+
+
+
   handleFormSubmit = event => {
     event.preventDefault();
-    this.runSearch(this.state.search)
-    .then(res => {
-        this.setState({search: res.data.results.name})
-    })
     console.log(this.state.search)
+   
+    const filterSearch = this.state.results.filter(employee => employee.name.first === this.state.search)
+    console.log(filterSearch)
+
+
+    this.setState({ results: filterSearch.length === 0 ? "No results found" : filterSearch })
+
+    // var n = str.includes("world")
+    // .then(res => {
+    //     this.setState({search: res.data.results.name})
+    // })
+    // console.log(this.state.search)
 
 
   };

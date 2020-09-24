@@ -1,14 +1,75 @@
 import React from "react";
 
-function Directory(props) {
+const DirectoryList = (props) => {
+    return(
+        <tr>
+    <th scope="row">{props.id}</th>
+    <td><img alt={props.first} src={props.image}/></td>
+    <td> Phone: {props.phone}</td>
+    <td> Name: {props.first} {props.last}    </td>
+    <td> Email {props.email}</td>
+    <td> DOB: {props.dob}    </td>
+    <td> ID: {props.id}    </td>
+        </tr>
+//need to replace the td to how we have the divs below
 
+
+
+
+    //             <div className="row">
+    // <div className="col-3-xs"><img alt={props.name} src={props.image} /></div>
+    // <div className="col-2-xs">Phone: {props.phone}</div>
+    // <div className="col-2-xs">Name: {props.first} {props.last}</div>
+    // <div className="col-3-xs">Email {props.email}</div>
+    //                 <div className="col-2-xs">DOB: {props.dob}</div>
+    //             </div>
+    )
+}
+
+
+
+function Directory(props) {
 
 
 
     return(
 
         <div className="container">
-  <div className="row">
+ 
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Image</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">DOB</th>
+    </tr>
+  </thead>
+  <tbody>
+  {props.employees.map((employee, i) => (
+                <DirectoryList 
+                    first={employee.name.first}
+                    last={employee.name.last}
+                    image={employee.picture.thumbnail}
+                    phone={employee.phone}
+                    email={employee.email}
+                    dob={employee.dob.date}
+                    id={i + 1}
+                />
+            ))}
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+  {/* <div className="row">
     <div className="col">
       Image
       <ul className="list-group">
@@ -66,7 +127,7 @@ function Directory(props) {
       ))}
     </ul>
     </div>
-  </div>
+  </div> */}
     </div>
     )
 }
