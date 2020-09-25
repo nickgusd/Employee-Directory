@@ -34,7 +34,7 @@ function Directory(props) {
     </tr>
   </thead>
   <tbody>
-  {props.employees.map((employee, i) => (
+  {props.employees.length === 0 ? <h1>No Entries Found</h1> : props.employees.map((employee, i) => (
                 <DirectoryList 
                     first={employee.name.first}
                     last={employee.name.last}

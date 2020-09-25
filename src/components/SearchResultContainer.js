@@ -48,7 +48,7 @@ componentDidMount() {
     console.log(filterSearch)
 
 
-    this.setState({ results: filterSearch.length === 0 ? "No results found" : filterSearch })
+    this.setState({ ...this.state, results: filterSearch.length === 0 ? [] : filterSearch })
 
     
 
