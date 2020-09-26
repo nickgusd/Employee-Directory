@@ -7,7 +7,7 @@ const style ={
 }
 
 const styleButton = {
-  margin: "0 auto"
+  margin: "10px auto"
 }
 
 function SearchForm(props) {
